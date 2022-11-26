@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 986px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 68px 0 100px 0;
+  background: linear-gradient(92.33deg, #087990 0.12%, #055160 100%);
+  border: 1px solid #ced4da;
+}
+
+h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 87px;
+  color: #cff4fc;
+  text-align: center;
+}
+.header_span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 36px;
+  color: #cff4fc;
+  text-align: center;
+  display: block;
+}
+input {
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 263px;
+  transform: translate(-50%);
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  width: 820px;
+  height: 64px;
+  padding-left: 32px;
+}
+
+input::placeholder {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 21px;
+  color: #abb5be;
+}
+body {
+  position: relative;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 19px;
+}
+
+.card {
+  text-align: center;
+  padding: 24px;
+  max-width: 316px;
+  background-color: #fff;
+}
+.card_emoji {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
+  color: #68717a;
+}
+
+.card_title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+.card_text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #3f444a;
+}
+
+main {
+  padding: 80px 0 50px 0;
+  background: #edeef3;
+}
+footer {
+  padding: 13px 0 17px 0;
+  background: #edeef3;
+}
+
+.footer__container {
+  border-top: 1px solid #ced4da;
+  padding-top: 13px;
+}
+
+.footer__copyright {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #6c757d;
+}
