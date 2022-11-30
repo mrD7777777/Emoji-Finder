@@ -1,7 +1,7 @@
 import { data } from "./emoji.js";
-console.log("hi");
 const cards = document.querySelector(".cards");
 const input = document.querySelector("input");
+const newData = sort(data);
 
 function createCard(obj) {
   const card = document.createElement("div");
@@ -24,7 +24,14 @@ function createCard(obj) {
   return card;
 }
 
-data.forEach((el) => cards.append(createCard(el)));
+function sort(arr) {
+  return data.map((emoji) => ({
+    ...emoji,
+    keywords: [...new Set(emoji.keywords.split(" "))].join(" "),
+  }));
+}
+
+newData.forEach((el) => cards.append(createCard(el)));
 
 input.addEventListener("input", showTitle);
 function showTitle() {
