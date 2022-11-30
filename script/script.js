@@ -1,4 +1,5 @@
 import { data } from "./emoji.js";
+
 const cards = document.querySelector(".cards");
 const input = document.querySelector("input");
 const newData = sort(data);
@@ -25,21 +26,25 @@ function createCard(obj) {
 }
 
 function sort(arr) {
-  return data.map((emoji) => ({
+  return arr.map((emoji) => ({
     ...emoji,
     keywords: [...new Set(emoji.keywords.split(" "))].join(" "),
   }));
 }
 
-newData.forEach((el) => cards.append(createCard(el)));
+function addData(arr) {
+  arr.forEach((el) => cards.append(createCard(el)));
+}
+addData(newData);
 
-input.addEventListener("input", showTitle);
-function showTitle() {
+function searchEmoji() {
   let data1 = data.filter(
     (card) =>
       card.title.toLowerCase().includes(input.value.trim().toLowerCase()) ||
       card.keywords.includes(input.value.trim().toLowerCase())
   );
   cards.innerHTML = "";
-  data1.forEach((el) => cards.append(createCard(el)));
+  addData(data1);
 }
+
+input.addEventListener("input", searchEmoji);
