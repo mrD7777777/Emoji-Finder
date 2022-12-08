@@ -1,8 +1,7 @@
-import { data } from "./emoji.js";
+// import { data } from "./emoji.js";
 
 const cards = document.querySelector(".cards");
 const input = document.querySelector("input");
-const newData = sort(data);
 
 function createCard(obj) {
   const card = document.createElement("div");
@@ -24,7 +23,16 @@ function createCard(obj) {
 
   return card;
 }
+let data = await amojiHandler();
 
+async function amojiHandler() {
+  let response = await fetch("https://emoji.ymatuhin.workers.dev/");
+  let data = await response.json();
+  return data;
+}
+amojiHandler();
+
+const newData = sort(data);
 function sort(arr) {
   return arr.map((emoji) => ({
     ...emoji,
